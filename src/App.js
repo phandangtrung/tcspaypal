@@ -1,12 +1,21 @@
 import logo from "./logo.svg";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { PayPalButton } from "react-paypal-button-v2";
 
 function App() {
+  const [data, setdata] = useState("");
+  const handleEvent = (message) => {
+    console.log(message.data);
+  };
+  useEffect(() => {
+    const abd = document.addEventListener("message", handleEvent);
+    setdata(abd);
+  }, []);
   return (
     <div className="App">
-      trungphan
-      <div style={{ paddingTop: 150 }}>
+      <div>{data}</div>
+      <div style={{ paddingTop: 50 }}>
         <PayPalButton
           amount={4}
           // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
