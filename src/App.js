@@ -5,15 +5,13 @@ import { PayPalButton } from "react-paypal-button-v2";
 
 function App() {
   const [data, setdata] = useState("trung");
-  const handleEvent = (message) => {
-    console.log(message.data);
-  };
+
   useEffect(() => {
     // const abd = document.addEventListener("message", handleEvent);
     // setdata(abd);
     window.addEventListener("message", (message) => {
       console.log(message.data); // Wayne is coming!!!
-      setdata(message.data);
+      setdata(message);
     });
   }, []);
   return (
