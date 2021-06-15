@@ -13,10 +13,10 @@ function App() {
     //   console.log(message.data); // Wayne is coming!!!
     //   setdata(message.data);
     // });
-    window.addEventListener("message", function (event) {
-      alert(event.data);
-      // setdata(event.data);
-      // setdata("qua ne");
+    document.addEventListener("message", function (e) {
+      // this is `document`. Calling `this.setState` will raise an exception
+      setdata(e.data);
+      alert(e.data);
     });
   }, []);
   return (
