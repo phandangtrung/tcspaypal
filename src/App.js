@@ -9,9 +9,12 @@ function App() {
   useEffect(() => {
     // const abd = document.addEventListener("message", handleEvent);
     // setdata(abd);
-    window.addEventListener("message", (message) => {
-      console.log(message.data); // Wayne is coming!!!
-      setdata(message.data);
+    // window.addEventListener("message", (message) => {
+    //   console.log(message.data); // Wayne is coming!!!
+    //   setdata(message.data);
+    // });
+    document.addEventListener("message", function (event) {
+      alert(event.data);
     });
   }, []);
   return (
