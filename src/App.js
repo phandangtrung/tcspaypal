@@ -14,9 +14,9 @@ function App() {
     //   setdata(message.data);
     // });
     window.addEventListener("message", function (event) {
-      // alert(event.data);
+      alert(event.data);
       // setdata(event.data);
-      setdata("qua ne");
+      // setdata("qua ne");
     });
   }, []);
   return (
