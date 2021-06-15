@@ -15,7 +15,8 @@ function App() {
     // });
     window.addEventListener("message", function (event) {
       // alert(event.data);
-      setdata(event.data);
+      // setdata(event.data);
+      setdata("qua ne");
     });
   }, []);
   return (
