@@ -15,7 +15,7 @@ function App() {
     // });
     document.addEventListener("message", function (e) {
       // this is `document`. Calling `this.setState` will raise an exception
-      setdata(e.data);
+      // setdata(e.data);
       alert(e.data);
     });
   }, []);
