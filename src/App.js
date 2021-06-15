@@ -14,7 +14,8 @@ function App() {
     //   setdata(message.data);
     // });
     document.addEventListener("message", function (event) {
-      alert(event.data);
+      // alert(event.data);
+      setdata(event.data);
     });
   }, []);
   return (
