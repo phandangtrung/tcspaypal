@@ -13,7 +13,7 @@ function App() {
     //   console.log(message.data); // Wayne is coming!!!
     //   setdata(message.data);
     // });
-    document.addEventListener("message", function (event) {
+    window.addEventListener("message", function (event) {
       // alert(event.data);
       setdata(event.data);
     });
