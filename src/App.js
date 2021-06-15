@@ -11,7 +11,7 @@ function App() {
     // setdata(abd);
     window.addEventListener("message", (message) => {
       console.log(message.data); // Wayne is coming!!!
-      setdata(message);
+      setdata(message.data);
     });
   }, []);
   return (
