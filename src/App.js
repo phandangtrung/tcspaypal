@@ -14,6 +14,7 @@ function App() {
         setdata(price);
       });
     };
+    loaddatfm();
   }, []);
   return (
     <div className="App">
