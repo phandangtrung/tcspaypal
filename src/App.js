@@ -4,7 +4,7 @@ import "./App.css";
 import { PayPalButton } from "react-paypal-button-v2";
 
 function App() {
-  const [data, setdata] = useState("trung");
+  const [data, setdata] = useState("trungtestabc");
 
   useEffect(() => {
     // const abd = document.addEventListener("message", handleEvent);
