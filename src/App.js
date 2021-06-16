@@ -4,7 +4,7 @@ import "./App.css";
 import { PayPalButton } from "react-paypal-button-v2";
 
 function App() {
-  const [data, setdata] = useState("trungtestabc");
+  const [data, setdata] = useState(5);
 
   useEffect(() => {
     // const abd = document.addEventListener("message", handleEvent);
@@ -24,7 +24,7 @@ function App() {
       <div>{data}</div>
       <div style={{ paddingTop: 50 }}>
         <PayPalButton
-          amount={4}
+          amount={data}
           // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
           onSuccess={(details, data) => {
             // alert("Transaction completed by " + details.payer.name.given_name);
