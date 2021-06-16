@@ -14,7 +14,9 @@ function App() {
     //   setdata(message.data);
     // });
     document.addEventListener("message", function (event) {
-      alert(event.data);
+      // alert(event.data);
+      let jsonData = JSON.parse(event.data);
+      setdata(jsonData);
     });
   }, []);
   return (
