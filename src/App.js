@@ -20,6 +20,7 @@ function App() {
       // var body = document.getElementsByTagName('BODY')[0];
       document.addEventListener("message", function (msg) {
         var dt = msg.data;
+        alert(dt);
         setdatabp(dt);
       });
     };
