@@ -5,7 +5,7 @@ import "./App.css";
 import { PayPalButton } from "react-paypal-button-v2";
 
 function App() {
-  const [data, setdata] = useState(5);
+  const [data, setdata] = useState(1202);
   const savedata = (ordata) =>{
     try {
        axios({
