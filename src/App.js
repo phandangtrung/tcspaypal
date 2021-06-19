@@ -1,29 +1,26 @@
 import logo from "./logo.svg";
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 import "./App.css";
 import { PayPalButton } from "react-paypal-button-v2";
 
 function App() {
-  const [data, setdata] = useState(1202);
-  const savedata = (ordata) =>{
+  const [datapass, setdatapass] = useState({ price: 50, datap: {} });
+  const savedata = (ordata) => {
     try {
-       axios({
-          method: 'post',
-          url: 'https://tcsserver.herokuapp.com/api/orders/create/order',
-          data: {...ordata}
-        })
-    } catch (error) {
-
-    }
-
-
-  }
+      axios({
+        method: "post",
+        url: "https://tcsserver.herokuapp.com/api/orders/create/order",
+        data: { ...ordata },
+      });
+    } catch (error) {}
+  };
   useEffect(() => {
     const loaddatfm = () => {
       // var body = document.getElementsByTagName('BODY')[0];
       document.addEventListener("message", function (msg) {
         var price = msg.data;
+        alert(price);
         setdata(price);
       });
     };
