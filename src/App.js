@@ -29,6 +29,7 @@ function App() {
   return (
     <div className="App">
       <div>{datapass.price}</div>
+      <div>Thay đổi rồi</div>
       <div style={{ paddingTop: 50 }}>
         <PayPalButton
           amount={datapass.price}
