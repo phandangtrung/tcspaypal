@@ -21,17 +21,17 @@ function App() {
       document.addEventListener("message", function (msg) {
         var price = msg.data;
         alert(price);
-        setdata(price);
+        setdatapass(price);
       });
     };
     loaddatfm();
   }, []);
   return (
     <div className="App">
-      <div>{data.price}</div>
+      <div>{datapass.price}</div>
       <div style={{ paddingTop: 50 }}>
         <PayPalButton
-          amount={data.price}
+          amount={datapass.price}
           // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
           onSuccess={(details, data) => {
             // alert("Transaction completed by " + details.payer.name.given_name);
