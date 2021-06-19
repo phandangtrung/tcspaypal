@@ -5,7 +5,7 @@ import "./App.css";
 import { PayPalButton } from "react-paypal-button-v2";
 
 function App() {
-  const [datapass, setdatapass] = useState({ price: 50, datap: {} });
+  const [databp, setdatabp] = useState({ price: 50, datane: {} });
   const savedata = (ordata) => {
     try {
       axios({
@@ -19,20 +19,18 @@ function App() {
     const loaddatfm = () => {
       // var body = document.getElementsByTagName('BODY')[0];
       document.addEventListener("message", function (msg) {
-        var price = msg.data;
-        alert(price);
-        setdatapass(price);
+        var dt = msg.data;
+        setdatabp(dt);
       });
     };
     loaddatfm();
   }, []);
   return (
     <div className="App">
-      <div>{datapass.price}</div>
-      <div>Thay đổi rồi</div>
+      <div>{databp.price}</div>
       <div style={{ paddingTop: 50 }}>
         <PayPalButton
-          amount={datapass.price}
+          amount={databp.price}
           // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
           onSuccess={(details, data) => {
             // alert("Transaction completed by " + details.payer.name.given_name);
@@ -43,7 +41,7 @@ function App() {
             //     orderId: data.orderID,
             //   }),
             // });
-            savedata(data.datap);
+            savedata(databp.datane);
           }}
           options={{
             clientId:
