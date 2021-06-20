@@ -22,7 +22,6 @@ function App() {
         var dt = msg.data;
 
         setdatabp(dt);
-        alert(dt);
       });
     };
     loaddatfm();
@@ -30,6 +29,7 @@ function App() {
   return (
     <div className="App">
       <div>{databp}</div>
+      <div>Test message ne</div>
       <div style={{ paddingTop: 50 }}>
         <PayPalButton
           amount={databp.price}
@@ -51,6 +51,14 @@ function App() {
           }}
         />
       </div>
+      <button
+        onClick={() => {
+          console.log("Send post message");
+          window.postMessage("Hello React", "*");
+        }}
+      >
+        Send data
+      </button>
     </div>
   );
 }
