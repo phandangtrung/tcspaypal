@@ -5,7 +5,7 @@ import "./App.css";
 import { PayPalButton } from "react-paypal-button-v2";
 
 function App() {
-  const [databp, setdatabp] = useState({ price: 50, datane: {} });
+  const [databp, setdatabp] = useState(56);
   const savedata = (ordata) => {
     try {
       axios({
@@ -20,15 +20,16 @@ function App() {
       // var body = document.getElementsByTagName('BODY')[0];
       document.addEventListener("message", function (msg) {
         var dt = msg.data;
-        alert(dt.price);
+
         setdatabp(dt);
+        alert(dt);
       });
     };
     loaddatfm();
   }, []);
   return (
     <div className="App">
-      <div>{databp.price}</div>
+      <div>{databp}</div>
       <div style={{ paddingTop: 50 }}>
         <PayPalButton
           amount={databp.price}
