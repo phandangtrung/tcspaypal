@@ -53,8 +53,7 @@ function App() {
       </div>
       <button
         onClick={() => {
-          console.log("Send post message");
-          window.postMessage("Hello React", "*");
+          window.ReactNativeWebView.postMessage("qua roi ne");
         }}
       >
         Send data
