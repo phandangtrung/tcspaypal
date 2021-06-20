@@ -6,15 +6,7 @@ import { PayPalButton } from "react-paypal-button-v2";
 
 function App() {
   const [databp, setdatabp] = useState(56);
-  const savedata = (ordata) => {
-    try {
-      axios({
-        method: "post",
-        url: "https://tcsserver.herokuapp.com/api/orders/create/order",
-        data: { ...ordata },
-      });
-    } catch (error) {}
-  };
+
   useEffect(() => {
     const loaddatfm = () => {
       // var body = document.getElementsByTagName('BODY')[0];
@@ -28,11 +20,9 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <div>{databp}</div>
-      <div>Test message ne</div>
       <div style={{ paddingTop: 50 }}>
         <PayPalButton
-          amount={databp.price}
+          amount={databp}
           // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
           onSuccess={(details, data) => {
             // alert("Transaction completed by " + details.payer.name.given_name);
@@ -43,7 +33,8 @@ function App() {
             //     orderId: data.orderID,
             //   }),
             // });
-            savedata(databp.datane);
+            // savedata(databp.datane);
+            window.ReactNativeWebView.postMessage("qua roi ne");
           }}
           options={{
             clientId:
@@ -51,13 +42,6 @@ function App() {
           }}
         />
       </div>
-      <button
-        onClick={() => {
-          window.ReactNativeWebView.postMessage("qua roi ne");
-        }}
-      >
-        Send data
-      </button>
     </div>
   );
 }
